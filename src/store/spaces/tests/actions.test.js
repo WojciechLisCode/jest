@@ -8,13 +8,13 @@ describe("#fetchSpacesSuccess", () => {
         type: FETCH_SPACES_SUCCESS,
         payload: spaces,
       };
-
       expect(fetchSpacesSuccess(spaces)).toEqual(expected);
     });
     expect(fetchSpacesSuccess(spaces).payload).toHaveLength(spaces.length);
-    // 1. test => action.payload should have the same length as the argument given
   });
-
-  // describe => if given a null argument
-  // test => action.payload should be null
+  describe("if given a null argument", () => {
+    test("action.payload should be null", () => {
+      expect(fetchSpacesSuccess(null).payload).toBeNull();
+    });
+  });
 });
